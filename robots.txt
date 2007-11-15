@@ -1,0 +1,31 @@
+User-agent: *
+Allow: /
+
+User-agent: Mediapartners-Google
+Allow: /
+
+User-agent: Adsbot-Google
+Allow: /
+
+User-agent: Googlebot-Image
+Allow: /
+
+User-agent: Googlebot-Mobile
+Allow: /
+
+User-agent: ia_archiver-web.archive.org
+Disallow: /
+
+Disallow: /Adm/
+Disallow: /Arquivos/
+Disallow: /aspnet_client/
+Disallow: /bin/
+Disallow: /fckeditor/
+Disallow: /Scripts/
+Disallow: /Usuarios/
+Disallow: /LembraSenha.aspx
+Disallow: /Erro.htm
+Disallow: /HtmlDadosAcesso.html
+
+# Arquivos Sitemap
+Sitemap: http://www.bessapolpas.com.br/sitemap.xml
