@@ -1,0 +1,107 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPageAdm.master.cs" Inherits="Adm_MasterPageAdm" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+<link href="/stylo.css" rel="stylesheet" type="text/css" />
+    
+<!-- link to the CSS files for this menu type -->
+<link rel="stylesheet" type="text/css" media="screen" href="/Scripts/Plugins/superfish/css/superfish.css" /> 
+ 
+<script type="text/javascript" src="/Scripts/jquery-1.3.2.min.js"></script>
+ 
+<!-- link to the JavaScript files (hoverIntent is optional)  -->
+<script type="text/javascript" src="/Scripts/Plugins/superfish/js/hoverIntent.js"></script> 
+<script type="text/javascript" src="/Scripts/Plugins/superfish/js/superfish.js"></script> 
+
+<!-- initialise Superfish  -->
+<script type="text/javascript"> 
+ 
+    $(document).ready(function(){ 
+        $("ul.sf-menu").superfish({ 
+            pathClass:  'current' 
+        }); 
+    }); 
+ 
+</script>
+    
+</head>
+<body>
+    <form id="form1" runat="server">
+    <asp:ScriptManager ID="ScriptManager1" runat="server" />
+<div id="main">
+  <div id="header">
+  
+  <div id="saudacoes">
+	    <h1>Administrativo</h1>
+  </div><!-- saudacoes -->
+    <div id="menu">
+    <strong class="fn"><a href="http://<%= Request.Url.Authority %>">
+                            <asp:Image ID="ImageLogo" runat="server" BorderWidth="0px" /></a></strong>
+    	  <ul class="sf-menu">
+    	          <li><a href="/Adm">Home</a></li> 
+      			  <li><a href="#">Site</a>
+					  <ul>
+						  <li><a href="/Adm/CadSite.aspx">Cadastro</a></li>
+					  </ul>
+		          </li>
+      			  <li><a href="/Adm/Paginas.aspx">Páginas</a>
+					  <ul>
+						  <li><a href="/Adm/CadPagina.aspx">Cadastro</a></li>
+					  </ul>
+		          </li>
+                    
+        		  <li><a href="/Adm/Subpaginas.aspx">Subpáginas</a>
+				    <ul>
+						  <li><a href="/Adm/CadSubPagina.aspx">Cadastro</a></li>
+					  </ul>
+		          </li>
+                  <li><a href="/Usuarios">Usuários</a></li>  
+        		  <li><asp:LoginStatus ID="LoginStatus1" runat="server" LogoutAction="Redirect" 
+                          LogoutPageUrl="\" LogoutText="Sair" /></li>
+        </ul>
+           
+  </div><!-- menu -->  
+  </div>
+  <!-- header -->
+		<br class="clr" />
+		<hr />
+    <div class="line-b">
+        <div id="main-content">
+            <div class="post">
+        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+            </div>
+            <!-- post -->
+         <div id="sidebar">
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server">
+                
+                </asp:ContentPlaceHolder>
+            </div>
+            <!-- sidebar -->
+        </div>
+            <!-- main-content -->
+        </div>
+    <!-- line-b -->
+    <br class="clr" />
+    <hr />
+	<div class="line-c">
+		<div id="footer">
+	  	<p class="license">&nbsp;<br />
+			&nbsp;<br />
+			&nbsp;<strong>&nbsp;</strong></p>
+			<br class="clr" />
+		</div><!-- footer -->
+	</div><!-- line-c -->
+</div><!-- main -->
+<p class="rwd">
+            Produzido por: <a href="http://www.rwd.net.br" title="Criação de Sites" target="_blank">
+                Ramos Web Designer</a></p>
+    </form>
+</body>
+</html>
